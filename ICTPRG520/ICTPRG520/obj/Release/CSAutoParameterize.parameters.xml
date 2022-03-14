@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DbContextTest-Web.config Connection String" description="DbContextTest Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\TestDB.mdf;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Personal\\Australia\\Estudio\\Platzi\\Web\\Test2\\ICTPRG520\\ICTPRG520\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DbContextTest']/@connectionString" />
+  </parameter>
+</parameters>

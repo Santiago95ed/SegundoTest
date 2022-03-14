@@ -1,0 +1,56 @@
+﻿@model ICTPRG520.Models.Task4
+
+@{
+    ViewBag.Title = "Task4";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Task4</h2>
+<div class="row">
+
+    @using (Html.BeginForm("Task4", "Home", FormMethod.Post))
+    {
+        <div class="col-lg-2">
+            @Html.LabelFor(m => m.Number1)
+        </div>
+
+        <div class="col-lg-2">
+            @Html.TextBoxFor(m => m.Number1)
+        </div>
+        <div class="col-lg-2">
+            @Html.LabelFor(m => m.Number2)
+        </div>
+
+        <div class="col-lg-2">
+            @Html.TextBoxFor(m => m.Number2)
+        </div>
+
+
+        <div>
+            <input type="submit" value="Calculate values" />
+        </div>
+    }
+</div>
+
+@if (ViewBag.marker != null)
+{
+    <p>The result for your operations is:</p>
+    <div class="row">
+        <p>@Model.Number1 + @Model.Number2 = @Model.ResultPlus</p>
+    </div>
+    <div class="row">
+        <p>@Model.Number1 - @Model.Number2 = @Model.ResultMinus</p>
+    </div>
+    <div class="row">
+        <p>@Model.Number1 X @Model.Number2 = @Model.ResultMul</p>
+    </div>
+    <div class="row">
+        <p>@Model.Number1 / @Model.Number2  = @(ViewBag.divBy0 != null ? "Cannot divide by 0" : Model.ResultDiv.ToString() )</p>
+    </div>
+}
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+﻿@model ICTPRG520.Models.FinancialCalculator
+
+@{
+    ViewBag.Title = "Home Page";
+
+
+}
+
+<div class="jumbotron">
+    <h1>ICTPRG520 Ahora en el poderoso AZURE</h1>
+
+</div>
+
+<div class="row">
+
+
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+
+
+        <div class="col-lg-2">
+            @Html.LabelFor(m => m.PrincipalAmount)
+        </div>
+
+        <div class="col-lg-2">
+            @Html.TextBoxFor(m => m.PrincipalAmount)
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div class="col-lg-2">
+            @Html.LabelFor(m => m.AnnualIntrsRate)
+        </div>
+
+        <div class="col-lg-3">
+            @Html.TextBoxFor(m => m.AnnualIntrsRate) %
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div class="col-lg-2">
+            @Html.LabelFor(m => m.years)
+        </div>
+        <div class="col-lg-3">
+            @Html.TextBoxFor(m => m.years)   Years
+        </div>
+
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <input type="submit" value="Compute monthly cost" />
+
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+    }
+
+
+    @if (ViewBag.MortgagePayment != null)
+    {
+        string payment = (string)ViewBag.MortgagePayment;
+        <p>
+            Your Mortage  payment per month is: @payment
+
+        </p>
+    }
+</div>

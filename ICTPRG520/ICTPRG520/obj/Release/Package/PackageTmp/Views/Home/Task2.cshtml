@@ -1,0 +1,71 @@
+﻿@model IList<ICTPRG520.Models.EmployeeModel>
+
+@{
+    ViewBag.Title = "Task2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/mainSite.js"></script>
+
+<h2>Task2</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateTask2")
+</p>
+
+
+
+@using (Html.BeginForm("Task2", "Home", FormMethod.Post))
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.First().EmployeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.First().EmployeeLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.First().Rate)
+            </th>
+            <th>
+                Hours worked
+            </th>
+            <th>Amount earned</th>
+            <th></th>
+        </tr>
+
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>
+                    @Html.HiddenFor(modelItem => Model[i].EmployeeID)
+                    @Html.DisplayFor(modelItem => Model[i].EmployeeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model[i].EmployeeLastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model[i].Rate)
+                </td>
+                <td>
+                    @Html.TextBoxFor(modelItem => Model[i].HoursWorked, new { @Class = "rateCalculator", @data_id = Model[i].EmployeeID, @data_rate = decimal.Round(Model[i].Rate, 2) })
+                </td>
+                <td>
+                    <label id="amount@(Model[i].EmployeeID)"></label>
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditTask2", new { id = Model[i].EmployeeID }) |
+                    @Html.ActionLink("Delete", "DeleteTask2", new { id = Model[i].EmployeeID })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <input type="submit" value="Calculate rates" />
+
+}
+
+
