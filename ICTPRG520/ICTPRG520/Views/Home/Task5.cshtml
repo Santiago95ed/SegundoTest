@@ -1,0 +1,218 @@
+﻿@model ICTPRG520.Models.ComputerModel
+@using ICTPRG520.Models
+
+
+@{
+    ViewBag.Title = "Task5";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    HPC HpModel = (HPC)ViewBag.ModelHP;
+    DellC DellModel = (DellC)ViewBag.ModelDell;
+    ToshibaC ToshibaModel = (ToshibaC)ViewBag.ModelToshiba;
+
+}
+
+<h2>Task5</h2>
+<h4>Computers</h4>
+
+
+<div class="row">
+
+    <div class="col-lg-4">
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Brand)
+            </dt>
+
+            <dd>
+                @HpModel.Brand
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OSComputer)
+            </dt>
+
+            <dd>
+                @HpModel.OSComputer
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RamComputer)
+            </dt>
+
+            <dd>
+                @HpModel.RamComputer
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HardDiskComputer)
+            </dt>
+
+            <dd>
+                @HpModel.HardDiskComputer
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ScreenSize)
+            </dt>
+
+            <dd>
+                @HpModel.ScreenSize
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProcessorComputer)
+            </dt>
+
+            <dd>
+                @HpModel.ProcessorComputer
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StockAvailible)
+            </dt>
+
+            <dd>
+                @(HpModel.StockAvailible ? "Available" : "No available")
+            </dd>
+            <dd>
+                 <img  class="img-responsive"  src="~/Img/HP.jpg" />
+            </dd>
+        </dl>
+    </div>
+
+
+    <div class="col-lg-4">
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Brand)
+            </dt>
+
+            <dd>
+                @DellModel.Brand
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OSComputer)
+            </dt>
+
+            <dd>
+                @DellModel.OSComputer
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RamComputer)
+            </dt>
+
+            <dd>
+                @DellModel.RamComputer
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HardDiskComputer)
+            </dt>
+
+            <dd>
+                @DellModel.HardDiskComputer
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ScreenSize)
+            </dt>
+
+            <dd>
+                @DellModel.ScreenSize
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProcessorComputer)
+            </dt>
+
+            <dd>
+                @DellModel.ProcessorComputer
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StockAvailible)
+            </dt>
+
+            <dd>
+                @(DellModel.StockAvailible ? "Available" : "No available")
+            </dd>
+            <dd>
+                <img class="img-responsive" src="~/Img/dell.jpg" />
+            </dd>
+        </dl>
+    </div>
+
+
+    <div class="col-lg-4">
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Brand)
+            </dt>
+
+            <dd>
+                @ToshibaModel.Brand
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OSComputer)
+            </dt>
+
+            <dd>
+                @ToshibaModel.OSComputer
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RamComputer)
+            </dt>
+
+            <dd>
+                @ToshibaModel.RamComputer
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HardDiskComputer)
+            </dt>
+
+            <dd>
+                @ToshibaModel.HardDiskComputer
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ScreenSize)
+            </dt>
+
+            <dd>
+                @ToshibaModel.ScreenSize
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProcessorComputer)
+            </dt>
+
+            <dd>
+                @ToshibaModel.ProcessorComputer
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StockAvailible)
+            </dt>
+
+            <dd>
+                @(ToshibaModel.StockAvailible ? "Available" : "No available")
+            </dd>
+            <dd>
+                <img class="img-responsive" src="~/Img/toshiba.jpg" />
+            </dd>
+        </dl>
+    </div>
+
+</div>

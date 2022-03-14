@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ICTPRG520.Models.EmployeeModel>
+
+@{
+    ViewBag.Title = "EmployeeWages";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EmployeeWages</h2>
+
+<p>
+    @Html.ActionLink("Back", "Task2")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoursWorked)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalWages)
+        </th>
+     
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoursWorked)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalWages)
+        </td> 
+    </tr>
+}
+
+</table>
